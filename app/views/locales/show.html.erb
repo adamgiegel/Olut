@@ -1,0 +1,8 @@
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=100x100&sensor=false&zoom=16&markers=#{@locale.latitude}%2C#{@locale.longitude}" %>
+
+<h3>Nearby locations</h3>
+<ul>
+<% for locale in @locale.nearbys(10) %>
+  <li><%= link_to locale.address, locale %> (<%= locale.distance.round(2) %> miles)</li>
+<% end %>
+</ul>

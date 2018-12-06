@@ -9,6 +9,10 @@
 <%=  link_to "#{location.name}-#{location.address}", location_path(location) %>
 <% end %>
 
+<% @beer.locations.each do |location| %>
+<%= link_to location.gmap, location_path(location) %>
+<% end %>
+
 <% @beer.ratings.to_i.times do  %>
 <span class="img"><%=image_tag("https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/beer-mug.png")%></span>
 <% end %>

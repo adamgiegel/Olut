@@ -1,0 +1,8 @@
+<ul>
+<li><% @locations.each do |location| %></li>
+<li><%= link_to location.name, location%></li>
+<% end %>
+</ul>
+
+
+<iframe width="300" height="300" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3SG6gUxxKwwKkYV6Pagm9zV06sEs7Xuw&q="<%="#{@locations.name}"%>"allowfullscreen></iframe>

@@ -64,4 +64,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'geocoder'
+gem 'gmaps4rails'
 # gem 'sass-rails', '>= 3.2'

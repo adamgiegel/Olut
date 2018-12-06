@@ -34,6 +34,7 @@ end
      render :index
    end
 
+
   private
 
   def beer_params

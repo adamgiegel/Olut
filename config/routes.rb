@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locales
+  resources :routers
   resources :beer_locations
   resources :locations
   resources :beers
