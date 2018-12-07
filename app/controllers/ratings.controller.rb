@@ -1,7 +1,0 @@
-class RatingsController < ApplicationController
-
-
-
-
-
-end

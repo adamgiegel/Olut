@@ -1,20 +1,26 @@
-<h1><%= @beer.name %></h1>
+<h1 class="title"><%= @beer.name %></h1>
 
-<%= @beer.category %>
-<%= @beer.abv %>
+<div class="img">
+<%= image_tag("beer.jpg") %>
+</div>
+
+<div class="info">
+<%= @beer.category %> <br>
+<%= @beer.abv %>%<br>
 <%= @beer.info %>
-<%= image_tag(@beer.image) %>
+</div>
 
+<h1 class="location">Where to find this beer!"</h1>"
+<ul class="address">
 <% @beer.locations.each do |location| %>
-<%=  link_to "#{location.name}-#{location.address}", location_path(location) %>
+<li> <%=  link_to "#{location.name}-#{location.address}", location_path(location), {:class=> "font"} %> <br>
+  <br>
 <% end %>
+<ul>
 
-<% @beer.locations.each do |location| %>
-<%= link_to location.gmap, location_path(location) %>
-<% end %>
+<br>
+<br>
 
-<% @beer.ratings.to_i.times do  %>
-<span class="img"><%=image_tag("https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/beer-mug.png")%></span>
-<% end %>
-
-<p><%= link_to image_tag('map.jpg'), ("https://www.google.com/search?q=where+can+I+buy+kentucky+bourbon+ale+beer+near+me&npsic=0&rflfq=1&rlha=0&rllag=40821563,-74015492,10286&tbm=lcl&ved=2ahUKEwjAs96jlYnfAhUliOAKHW4gB3sQtgN6BAgAEAU&tbs=lrf:!2m4!1e17!4m2!17m1!1e2!2m1!1e2!2m1!1e3!2m1!1e16!3sIAE,lf:1,lf_ui:10&rldoc=1#rlfi=hd:;si:;mv:!1m2!1d40.81741457873155!2d-73.86774574174808!2m2!1d40.66368006980881!2d-74.20523200883792!4m2!1d40.74059173819594!2d-74.036488875293!5i12") %></p>
+<div class="rate">
+Olut Rating - <%= @beer.average_rating %>
+</div>

@@ -28,28 +28,36 @@
           <div class="bubble bubble5"></div>
         </div>
       </div>
-      <h1>CRAFT BEER</h1>
+      <h1>OLUT</h1>
+    </div>
+
+<div class="headline">
+<h1>WELCOME TO OLUT! THE PLACE TO RATE AND DISCOVER</h1>
+</div>
+
+
+    <div class="search">
+    <%= form_tag("/search", method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Find a Brew") %>
+    <% end %>
     </div>
 
 
-
-
-
-
-
-<ul>
-<li><% @beers.each do |beer| %></li>
-<li><%= link_to beer.name, beer %></li>
-<% end %>
-</ul>
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-<iframe width="300" height="300" frameborder="0" style="border:0"
- src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3SG6gUxxKwwKkYV6Pagm9zV06sEs7Xuw&q=FlatironSchool"
- allowfullscreen>
-</iframe>
+<br>
+<br>
+<br>
+    <ul class="brands1">
+      <% @beers.each do |beer| %>
+      <div>
+      <%= link_to beer.name, beer, {:class=> "font2"}%> <br>
+      <div class="horizontal-list">
+      <%= button_to "1", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:1}} %>
+      <%= button_to "2", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:2}} %>
+      <%= button_to "3", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:3}} %>
+      <%= button_to "4", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:4}} %>
+      <%= button_to "5", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:5}} %>
+      </div>
+      </div>
+      <% end %>
+    </ul>

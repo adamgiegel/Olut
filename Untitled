@@ -1,0 +1,14 @@
+<%= form_for @rating do |f| %>
+  <%= radio_button :ratings, '5'%>
+  <%= radio_button :ratings, '5' %>
+  <%= radio_button :ratings, '5' %>
+  <%= radio_button :ratings, '5' %>
+  <%= radio_button :ratings, '5' %>
+  <%= submit_tag 'rate beer' %>
+  <%= link_to beer.name, beer %> <br>
+<% end %>
+
+<%# <span class="img"><%=image_tag("https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/beer-mug.png")%></span> %>
+
+
+<%# <p><%= link_to image_tag('map.jpg'), ("https://www.google.com/search?q=where+can+I+buy+kentucky+bourbon+ale+beer+near+me&npsic=0&rflfq=1&rlha=0&rllag=40821563,-74015492,10286&tbm=lcl&ved=2ahUKEwjAs96jlYnfAhUliOAKHW4gB3sQtgN6BAgAEAU&tbs=lrf:!2m4!1e17!4m2!17m1!1e2!2m1!1e2!2m1!1e3!2m1!1e16!3sIAE,lf:1,lf_ui:10&rldoc=1#rlfi=hd:;si:;mv:!1m2!1d40.81741457873155!2d-73.86774574174808!2m2!1d40.66368006980881!2d-74.20523200883792!4m2!1d40.74059173819594!2d-74.036488875293!5i12") %></p> %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_054103) do
+ActiveRecord::Schema.define(version: 2018_12_06_172825) do
 
   create_table "beer_locations", force: :cascade do |t|
     t.integer "beer_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_054103) do
     t.datetime "updated_at", null: false
     t.text "info"
     t.string "image"
-    t.string "ratings"
   end
 
   create_table "locales", force: :cascade do |t|

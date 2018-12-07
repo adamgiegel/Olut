@@ -1,6 +1,8 @@
 class Beer < ApplicationRecord
   has_many :beer_locations
   has_many :locations, through: :beer_locations
+  has_many :ratings
+  has_many :users, through: :ratings
 
   validates :name, presence: true
   validates :category, presence: true
@@ -21,5 +23,16 @@ end
     else
       Beer.all
     end
+
+    def average_rating
+        ratings = self.ratings.map {|rating| rating.ratings}
+        number_ratings= ratings.select {|rating| rating != nil}
+        numbers = number_ratings.map do |number|
+          number.to_i
+        end
+        sum = numbers.inject(:+)
+        sum/numbers.length
+      end
+
   end
 # end

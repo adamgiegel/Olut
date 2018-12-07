@@ -1,4 +1,13 @@
 <h1> <%= @user.name %> </h1>
 
 <h2> My beers </h2>
-<%# <ul> <%= @beers.name %> %>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<% @beers.each do |beer| %>
+<%= link_to beer.name, beer %>
+<% end %>
