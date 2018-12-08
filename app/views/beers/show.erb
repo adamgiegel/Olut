@@ -22,5 +22,7 @@
 <br>
 
 <div class="rate">
+  <% if @beer.ratings.length > 0 %>
 Olut Rating - <%= @beer.average_rating %>
+<% end %>
 </div>

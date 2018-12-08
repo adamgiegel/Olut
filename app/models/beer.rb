@@ -8,9 +8,6 @@ class Beer < ApplicationRecord
   validates :category, presence: true
   validates :abv, presence: true
 
-  def blank_stars
- 5 - ratings.to_i
-end
 
   def self.search(search, id)
   if search
@@ -20,9 +17,7 @@ end
     else
       Beer.all
   end
-    else
-      Beer.all
-    end
+end
 
     def average_rating
         ratings = self.ratings.map {|rating| rating.ratings}
